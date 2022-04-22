@@ -5,9 +5,9 @@
     MVC는 Model, View, Controller 3개의 component로 나뉜다.<br>
     ![Alt text](https://sochubert.github.io/assets/images/posts/Model-View-ControlMVC-design-pattern.png)<br>
     출처 : https://www.researchgate.net/figure/Model-View-ControlMVC-design-pattern_fig8_330140206<br>
-    Model에서는 Data와 Logic<br>
-    View에서는 User Interface<br>
-    Controller에서는 Mediator를 담고 있다. <br>
+    Model : 화면에 필요한 데이터와 Business Logic을 관리한다<br>
+    View : Model이 가진 데이터를 화면으로 보여준다<br>
+    Controller : Model과 View 사이의 브릿지 역할을 한다. <br>
 
 2. MVC Design Patten의 하는 일<br>
     View에서 input events를 보내면 Controller는 이것을 받아서 Model에게 요청을 보낸다 <br>
