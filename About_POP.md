@@ -41,3 +41,39 @@
     프로토콜을 채택 시 프로토콜이 요구하는 사항을 모두 구현해주어야한다.<br>
 
     예를 들어 프로토콜에 많은 요구사항들이 있고, 많은 구조체에서 채택을 했다면 많은 중복된 코드를 사용해야 할 거다. <br>
+
+    이를 방지하기 위해 프로토콜의 요구사항을 구현하지 않더라도 프로토콜의 익스텐션에 미리 프로토콜의 요구사항을 구현해 둘 수 있다. <br>
+
+    ``` swift 
+    protocol Walkable {
+        var isBareFoot: Bool { get set }
+        var speed: Double { get set }
+        
+        func walk(name: String)
+    }
+
+    extension Walkable {
+        func walk(name: String) {
+            if isBareFoot == true {
+                print("\(name)은 맨발인 상태에 \(speed)속도로 걷습니다.")
+            } else {
+                print("\(name)은 신발인 상태에 \(speed)속도로 걷습니다.")
+            }
+        }
+    }
+
+    struct Person: Walkable {
+        var isBareFoot: Bool
+        var speed: Double
+    }
+
+    struct Animal: Walkable {
+        var isBareFoot: Bool
+        var speed: Double
+    }
+
+    let seungjin = Person(isBareFoot: false, speed: 5.0)
+    seungjin.walk(name: "승진")
+    let dog = Animal(isBareFoot: true, speed: 10.0)
+    dog.walk(name: "몽실")
+    ```
