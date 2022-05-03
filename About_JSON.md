@@ -29,7 +29,7 @@ Dictionary와 같은 성격이다. <br>
     
     * Key-Value의 타입. <br>
     Key-Value 타입은 미리 지정된 타입만 쓸 수 있다. <br>
-    ![Alt text](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FboZJzk%2FbtqO0gnq43c%2FI0SmTMLwBJqXFjMb5q6I4k%2Fimg.png) 
+    ![Alt text](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FboZJzk%2FbtqO0gnq43c%2FI0SmTMLwBJqXFjMb5q6I4k%2Fimg.png) <br>
     Value 타입으로 JSON 객체 타입이 된다는 게 무슨 말이냐면.<br>
         ``` JSON
         {
