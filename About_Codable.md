@@ -54,4 +54,15 @@ Codable은 Decodable 과 Encodable로 이루어져 있다고 typealias로 정의
 <br>
 
 3. Codable을 이용한 Decoding
-
+    1. What is Decoding <br>
+        JSON 형태의 Data를 struct, class, enum 등의 인스턴스에 자동으로 파싱해주는 것. 
+        <br>
+        * Example <br>
+        Codable을 준수하는 구조체가 있다. <br>
+            ``` swift 
+            struct Human: Codable {
+                var name: String
+                var age: Int
+            }
+            ```
+            
