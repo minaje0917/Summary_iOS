@@ -145,7 +145,35 @@ Codable은 Decodable 과 Encodable로 이루어져 있다고 typealias로 정의
         Codable은 에러가 난다. <br>
         이럴 경우를 대비해서 2가지 처리를 할 수 있다. <br>
         1. Key가 없을 경우를 대비해 직접 Decoding 함수를 작성한다. <br>
-        
+        JSON을 Decoding 할 때 <br>
+        init(from deocder: Decoder) <br>
+        이 함수가 호출되는데, 우리가 이 함수를 건드려서 키가 없으면 대체할 값을 셋팅해주는 것이다.<br>
+            ```swift
+            struct Human: Codable {
+                var name: String
 
+                init(from decoder: Decoder) throws {
+                    let value = try decoder.container(keyedBy: CodingKeys.self)
+                    name = try? values.decode(String.self, forKey: .name) ?? ""
+                }
+            }
+            ```
+            이렇게 정의해주면 name이라는 Key가 없이 오더라도, Decoding Fail이 아닌 <br>
+            우리가 미리 정의해둔 ""값이 name에 들어간다. <br>
+
+        2. 변수를 옵셔널로 선언하자 <br>
+        옵셔널로 설정하면 문제가 해결된다. <br>
+        하지만 나중에 Optional Binding 하기 귀찮아진다.<br>
+    4. Value값이 null인 경우 <br>
+        JSON Data에선, Value값이 null일 수 있는데,
+        ```swift
+        let data """ 
+        {
+            "name" : null
+        }
+        """.data(using: .utf8)!
+        ```
+        이런 경우에는 그냥 변수를 Optional로 선언하면 된다. <br>
+        
 
 참고 : https://babbab2.tistory.com/61
