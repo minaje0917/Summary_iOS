@@ -1,6 +1,6 @@
 # lazy var 를 알아보자<br>
 
-1. lazy var란?
+1. lazy var란? <br>
     lazy variables는 처음에 변수가 요청되었을 때만 사용자가 지정한 함수를 사용하여 생성된다. <br>
 
     예시
