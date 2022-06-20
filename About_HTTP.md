@@ -24,6 +24,8 @@
     HTTP란 한 마디로 HTML문서를 주고 받는데 쓰이는 통신프로토콜이며,    
     TCP와 UDP를 사용하여 통신하며 80번 포트를 사용하는 통신프로토콜이다.
     ```
+    TCP위에서 동작하지만 TCP와 달리 무상태성 혹은 비연결성이다.     
+    때문에 쿠키나 세션을 이용하여 클라이언트의 상태를 관리할 수 있다.
     
 3. HTTP의 특징     
 * HTTP 메세지는 서버와 클라리언트에 의해 해석된다.
@@ -45,8 +47,29 @@
         CRLF
         [ message-body ]
         ```
-        ① Request-Line
+        ① Request-Line     
         Request-Line, URL정보, 요청방식(Method), HTTP 버전 제공 정보의 규칙입니다.      
         아래 그림에서는 Request URL, Request Method를 나타내고 있습니다.     
         ![Alt text](https://velog.velcdn.com/images%2Fdoomchit_3%2Fpost%2Ffed43472-01f3-4778-b43e-c206a6606860%2Fhttp-rere4.PNG)     
-        ② 
+             
+        ②  *(( general-header | request-header | entity-header ) CRLF)     
+        헤더정보, 헤더에는 요청하는 클라이언트 PC, 브라우저정보, 사용자언어환경, 쿠키등의 다양한 클라이언트 환경에 대한 정보를 가지고 있다.     
+        때문에 헤더영역에 존재하는 데이너틑 보안에 취약하다.     
+        ![Alt text](https://velog.velcdn.com/images%2Fdoomchit_3%2Fpost%2F529a78f6-b86f-43dc-8a54-232ee2ff78c4%2Fhttp-rere5.PNG)
+              
+       ③ CRLF     
+       줄바꿈 명령.     
+             
+       ④ [ message-body ]     
+       HTTP 본문영역, 주로 클라이언트가 입력한 데이터를 저장하는 영역이다.     
+       입력폼에 입력한 각종 데이터가 Method 방식에 따라 서버로 전달할 때 보안이 강화된 방식으로 message-body에 넣어 전달한다.     
+
+
+
+
+
+
+
+
+자료 참고 : https://velog.io/@doomchit_3/Internet-HTTP-%EA%B0%9C%EB%85%90%EC%B0%A8%EB%A0%B7-IMBETPY     
+https://mysterico.tistory.com/29
