@@ -63,7 +63,31 @@
        ④ [ message-body ]     
        HTTP 본문영역, 주로 클라이언트가 입력한 데이터를 저장하는 영역이다.     
        입력폼에 입력한 각종 데이터가 Method 방식에 따라 서버로 전달할 때 보안이 강화된 방식으로 message-body에 넣어 전달한다.     
-
+               
+    2. HTTP Response(응답) 메세지     
+    응답은 HTTP Request를 통해 요청된 정보에 대해 웹서버가 클라이언트에 보내는 응답형식 및 결과를 나타냅니다.     
+        ```
+        Status-Line
+        *(( general-header | response-header | entity-header ) CRLF )
+        CRLF
+        [ message-body ]
+        ````
+        ① Status-Line      
+        응답 상태정보 표시 라인, HTTP버전정보와 세자리 숫자값(200)과 상태코드 값을 통해 응답결과 및 상태정보를 나타냅니다.    
+        ![Alt text](https://velog.velcdn.com/images%2Fdoomchit_3%2Fpost%2F89dbacfc-2a0b-407d-ab1f-7d8509ae78c2%2Fhttp-rere6.PNG)      
+             
+        ② 응답 헤더정보 제공      
+        헤더정보, 각종 서버 및 웹사이트 관련 환경정보를 제공한다.     
+        ![Alt text](https://velog.velcdn.com/images%2Fdoomchit_3%2Fpost%2F3f11e3b4-97b0-4e70-af27-84e568c83327%2Fhttp-rere7.PNG)     
+                
+        ③ [ message-body ]     
+        HTTP본문영역, 주로 서버에서 사용자에게 전달되는 HTML소스 및 포함된 데이터를 저장하는 영역이다.    
+             
+5. HTTP Method      
+Method는 클라이언트가 웹서버에게 사용자의 요청의 목적/종류를 알리는 수단이다.      
+* GET : 정보검색 ex) 게시판 리스트 불러오기
+* POST : 실행 / 저장 ex) 회원가입 / 로그인
+* 
 
 
 
